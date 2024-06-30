@@ -9,7 +9,11 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+<<<<<<< HEAD
 import os
+=======
+
+>>>>>>> 902aee04ae9dc58fe95beacbf8d0c897045ab32b
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,11 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     #app creadas ahora
     'users',
     'carro',
     'productos',
     'contacto',
+=======
+>>>>>>> 902aee04ae9dc58fe95beacbf8d0c897045ab32b
 ]
 
 MIDDLEWARE = [
@@ -125,6 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -133,10 +141,15 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+=======
+>>>>>>> 902aee04ae9dc58fe95beacbf8d0c897045ab32b
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 902aee04ae9dc58fe95beacbf8d0c897045ab32b
