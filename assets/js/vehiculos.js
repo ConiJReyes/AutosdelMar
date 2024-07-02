@@ -8,7 +8,7 @@ const vehiculos = [
         motor: "2.0L I4",
         transmision: "Automatica",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2ZCE3qcgXpDM1Jozef3v8-zX5K03GdTjgCoLZHnMHPOEGRGXq" // URL de la imagen de la Toyota Hilux
+        imagen: "./assets/img_procesadas/Toyota-Logo2.jpg" // URL de la imagen de la Toyota Hilux
     },
     {
         marca: "Volkswagen",
@@ -18,7 +18,7 @@ const vehiculos = [
         motor: "2.0L I4",
         transmision: "Automatica",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQTyXqI3xEif6Y_CdOoMePLG1i2cdUDINZWQ13dK6mL_OefkxZS" // URL de la imagen de la Volkswagen Amarok
+        imagen: "./assets/img_procesadas/Volkswagen-Logo2.jpg" // URL de la imagen de la Volkswagen Amarok
     },
     {
         marca: "Honda",
@@ -28,7 +28,7 @@ const vehiculos = [
         motor: "3.5L V6",
         transmision: "Automatica",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ49I2Cxage1j5r1u00QRnfj5ZPU5PWn7-WF-mXMgI_zcum7JO6" // URL de la imagen de la Honda Pilot
+        imagen: "./assets/img_procesadas/Honda-Logo2.jpg" // URL de la imagen de la Honda Pilot
     },
     {
         marca: "Ford",
@@ -38,7 +38,7 @@ const vehiculos = [
         motor: "5.0L V8",
         transmision: "Automatica",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDqgHMM45QkDf7pEcjxm3FdGc9_LpYZahoC-OPT3ht9LrMxCcP" // URL de la imagen del Ford Mustang
+        imagen: "./assets/img_procesadas/Ford-Logo2.jpg" // URL de la imagen del Ford Mustang
     },
     {
         marca: "Chevrolet",
@@ -48,7 +48,7 @@ const vehiculos = [
         motor: "6.2L V8",
         transmisión: "Automática",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSc_c6wJr7irplKHwlDBO2Kt5paB4akPIk6XZkfeP3adeYBEYUP" // URL de la imagen de la Chevrolet Silverado
+        imagen: "./assets/img_procesadas/Chevrolet-Logo.jpg" // URL de la imagen de la Chevrolet Silverado
     },
     {
         marca: "BMW",
@@ -58,7 +58,7 @@ const vehiculos = [
         motor: "3.0L I6",
         transmisión: "Automática",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCrQGRjoK6hIdb5zlJOY_ENaMPTkWmzDg19l3MGK98VJglUVQo" // URL de la imagen de la BMW X5
+        imagen: "./assets/img_procesadas/BMW-Logo.jpg" // URL de la imagen de la BMW X5
     },
     {
         marca: "Mercedes-Benz",
@@ -68,7 +68,7 @@ const vehiculos = [
         motor: "3.0L I6",
         transmisión: "Automática",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQsuGpWPWYnJqn_DZqvYR1oSXvgu2PYPs7wKXMH_QUv-FV5C9aO" // URL de la imagen del Mercedes-Benz E-Class
+        imagen: "./assets/img_procesadas/Mercedes-Logo.jpg" // URL de la imagen del Mercedes-Benz E-Class
     },
     {
         marca: "Audi",
@@ -78,7 +78,7 @@ const vehiculos = [
         motor: "2.0L I4",
         transmisión: "Automática",
         tipoCombustible: "Gasolina",
-        imagen: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQKkefSdswb73dbrr4BPRnHW1COU32SZt_v5sf1Y2s3YvK1V7xJ" // URL de la imagen del Audi Q5
+        imagen: "./assets/img_procesadas/Audi-Logo.jpg" // URL de la imagen del Audi Q5
     }
 ];
 
