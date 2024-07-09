@@ -2,11 +2,11 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from contacto.views import submit_form 
-
+from contacto.views import contacto_view  # Asegúrate de importar la vista correcta
+from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('submit_form/', submit_form, name='submit_form'), 
-    path('productos/', include('productos.urls')), 
+    path('contacto/', views.contacto_view, name='contacto'),
+    path('productos/', include('productos.urls')),
+    # Otras rutas si las tienes
 ]
-
