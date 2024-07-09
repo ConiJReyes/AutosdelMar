@@ -1,0 +1,18 @@
+<!-- templates/contacto/contacto_list.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<section id="listado-contactos" class="container mt-4">
+    <div class="row">
+        <h1>Listado de Contactos</h1>
+        <ul>
+            {% for contacto in contactos %}
+                <li>{{ contacto.nombre }} - {{ contacto.email }} - {{ contacto.motivo }}</li>
+            {% empty %}
+                <li>No hay contactos.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

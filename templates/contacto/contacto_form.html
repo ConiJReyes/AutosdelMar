@@ -1,0 +1,16 @@
+<!-- contacto/templates/contacto/contacto.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<section id="contacto" class="container mt-4">
+    <div class="row">
+        <h1>Contacto</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
