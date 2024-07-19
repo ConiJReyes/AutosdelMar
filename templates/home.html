@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<style>
+    body {
+        background-color: #a0aec0;
+    }
+    main > section {
+        display: none;
+        padding: 60px 0;
+    }
+    main > section.active {
+        display: block;
+    }
+    nav a {
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+   <!--INICIO,CARRUSEL-->
+   <section id="inicio" class="container mt-4">
+    <div class="row">
+    <!--Carrusel-->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'app/img/tiendafuera.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'app/img/logoHyundai.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'app/img/logoPrincipal2.jpeg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+        <section class="informacion">
+            <h2>¿Por qué elegir Autos del Mar?</h2>
+            <p>En Autos del Mar, ofrecemos una amplia selección de vehículos de calidad a precios competitivos. Nuestro equipo de expertos está aquí para ayudarte a encontrar el vehículo perfecto que se adapte a tus necesidades y presupuesto.</p>
+            <p>Además, ofrecemos servicios de financiamiento y garantías para brindarte tranquilidad al momento de realizar tu compra.</p>
+        </section>
+
+        <!--Contenido principal de la pagina-->
+        <section class="destacados">
+            <!--Seccion de Autos-->
+            <section class="nuevos-productos">
+                <h2>Nuestros Autos</h2>
+                <div class="nuevos-productos-container">
+                    <!-- Primer Producto -->
+                    <div class="nuevo-producto">
+                        <img src="{% static 'app/img/Toyota-Logo1.jpg' %}" alt="Producto 1">
+                        <h3>Toyota Hilux</h3>
+                        <a href="{% url 'vehiculos' %}" class="btn btn-primary">Mas Informacion</a>
+                    </div>
+                    <!-- Segundo Producto -->
+                    <div class="nuevo-producto">
+                        <img src="{% static 'app/img/Volkswagen-Logo1.jpg' %}" alt="Producto 2">
+                        <h3>Volkswagen Amarok</h3>
+                        <a href="{% url 'vehiculos' %}" class="btn btn-primary">Mas Informacion</a>
+                    </div>
+                    <div class="nuevo-producto">
+                        <img src="{% static 'app/img/Honda-Logo1.jpg' %}" alt="Producto 3">
+                        <h3>Honda Pilot</h3>
+                        <a href="{% url 'vehiculos' %}" class="btn btn-primary">Mas Informacion</a>
+                    </div>
+                    <div class="nuevo-producto">
+                      <img src="{% static 'app/img/Ford-Logo1.jpg' %}" alt="Producto 4">
+                      <h3>Ford Mustang</h3>
+                      <a href="{% url 'vehiculos' %}" class="btn btn-primary">Mas Informacion</a>
+                  </div>
+                </div>
+            </section>       
+        <!-- Sección de Novedades -->
+        <section class="novedades">
+            <h2>¿Necesitas Algo?</h2>
+            <h3>Compra Aquí</h3>
+            <div class="novedades-container">
+                <!-- Primer Producto de Novedades -->
+                <div class="novedad-producto">
+                    <img src="{% static 'app/img/Llantas-Logo.jpg' %}" alt="Llantas">
+                    <h3>Llantas</h3>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary">Ir a productos</a>
+                </div>
+                <!-- Segundo Producto de Novedades -->
+                <div class="novedad-producto">
+                    <img src="{% static 'app/img/Aceites-Logo.jpg' %}" alt="Aceite">
+                    <h3>Aceites</h3>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary">Ir a productos</a>
+                </div>
+                <!-- Tercer Producto de Novedades -->
+                <div class="novedad-producto">
+                    <img src="{% static 'app/img/logoAccesorios.jpg' %}" alt="Accesorios">
+                    <h3>Extras</h3>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary">Ir a productos</a>
+                </div>
+                <!-- Cuarto Producto de Novedades -->
+                <div class="novedad-producto">
+                    <img src="{% static 'app/img/logoBateria.jpg' %}" alt="Bateria">
+                    <h3>Baterias</h3>
+                    <a href="{% url 'carrito' %}" class="btn btn-primary">Ir a productos</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+{% endblock %}

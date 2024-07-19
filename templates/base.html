@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>autosdelmar</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="header">
+        <img class="menu" src="{% static 'app/img/logo.png' %}" alt="menu" id="menu" style="height: 50px;">
+        <nav id="nav" class="site-nav">
+            <div class="container-fluid">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1"  href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'vehiculos' %}">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'carrito' %}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    {% if perms.apps.add_producto %}
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'agregar_productos' %}">Agregar Productos</a>
+                    </li>
+                    {% endif %}
+                    {% if perms.apps.view_producto %}
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'listar_productos' %}">Listar Productos</a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="btn btn-info border mx-1" href="#">¡Bienvenido {{ user.username }}!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'salir' %}">Cerrar sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'login' %}">Iniciar sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary border mx-1" href="{% url 'registro' %}">Registrarse</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+<div id="contenido">
+
+    {% block contenido %}
+    {% endblock %}
+
+</div>
+
+<!--footer-->
+<footer class="footer">
+    <div class="grupo-1">
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Autos del Mar es una reconocida automotora especializada en la venta de vehículos de alta calidad. 
+                <p>Nos enorgullecemos de ofrecer a nuestros clientes una amplia selección de autos de las mejores marcas,</p> 
+                con opciones de financiamiento flexibles y un servicio al cliente excepcional.</p>
+        </div>
+        <div class="grupo-2">
+            <h2>SÍGUENOS</h2>
+            <div class="red-social">
+                <a href="https://www.facebook.com/renaultautodelmarsa" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/autodelmarrenault/" class="fa fa-instagram"></a>
+            </div>
+            <h3>Visítanos aquí</h3>
+            <img src="{% static 'app/img/ubicacion.jpeg' %}" alt="ubicacion">
+        </div>
+    </div>
+    
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>Autos del Mar</b> - Todos los Derechos Reservados.</small>
+    </div>
+
+</footer>
+
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+<script src="{% static 'app/js/vehiculos.js' %}" type="module"></script>
+<script src="{% static 'app/js/productos.js' %}" type="module"></script>
+<script src="{% static 'app/js/index.js' %}" type="module"></script>
+<script src="{% static 'app/js/login.js' %}" type="module"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if messages %}
+    {% for m in messages %}
+        <script>
+            Swal.fire({
+                "title": "Enhorabuena",
+                "text": "{{m}}",
+                "icon": "success"
+            })
+        </script>
+    {% endfor %}
+{% endif %}
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
+

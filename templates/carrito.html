@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<style>
+    body {
+        background-color: #a0aec0;
+    }
+
+    .card {
+            background-color: #d0d2d8; /* Color de fondo de la tarjeta */
+            border: 1px solid #000000; /* Borde de la tarjeta */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+    }
+
+    main > section {
+        display: none;
+        padding: 60px 0;
+    }
+    main > section.active {
+        display: block;
+    }
+    nav a {
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1>Carrito</h1>
+        </div>
+    </div>
+    <div class="row g-2">
+        {% for producto in productos %}
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="imagen" class="img-fluid">
+                    {% endif %}
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text">{{producto.categoria}}</p>
+                    <p class="card-text">${{producto.precio}}</p>
+                    <hr>
+                    <a href="{% url 'Add' producto_id=producto.id %}" class="btn btn-primary btn-sm">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="alert alert-primary mt-4" role="alert">
+        <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+                <thead>
+                    <tr>
+                        <th scope="row" colspan="3" class="text-center">Carrito</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">CANTIDAD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% if request.session.carrito.items %}
+                {% for key, value in request.session.carrito.items %}
+                <tr>
+                    <td>{{value.nombre}}</td>
+                    <td>{{value.precio}}</td>
+                    <td>{{value.total}}
+                        <a href="{% url 'Add' producto_id=value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+                        <a href="{% url 'Sub' producto_id=value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-danger text-center">Sin productos</div>
+                    </td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <th scope="row">Total:</th>
+                    <td colspan="2">$ {{total_carrito}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row text-center mt-4">
+        <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger btn-sm">Limpiar</a></div>
+        <div class="col-6"><a href="#" class="btn btn-success btn-sm">Guardar</a></div>
+    </div>
+</div>
+{% endblock %}
